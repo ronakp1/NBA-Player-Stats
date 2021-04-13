@@ -2,25 +2,52 @@
 <html>
 
 <head>
-
+<link rel="stylesheet" href="nbastyles.css"> 
 </head>
 
 <body>
-    <div id="test1"></div>
-    <input type="text" placeholder="Search.." data-search>
+    <div class="search-b">
+    <input type="text" class="textbox" placeholder="Search.." data-search>
     <button type="submit" data-submit>SUBMIT</button>
+    </div>
     <div class="player-stats">
-    <h1>Player:</h1>
-    <p>Name: <span id="name"></span> <br></br></p>
-    <p>Surname: <span id="surname"></span> <br></br></p>
-    <p>Position: <span id="position"></span> <br></br></p>
-    <p>Height (feet): <span id="height_feet"></span> <br></br></p>
-    <p>Height (inches): <span id="height_inches"></span> <br></br></p>
-    <p>Weight: <span id="weight_pounds"></span> <br></br></p>
-    <p>Team: <span id="full_name"></span> <br></br></p>
+    <h1><span id="name"></span> Season averages</h1>
+    <!--<p>Name: <span id="name"></span> <br></br></p>
+    <p>Surname: <span id="surname"></span> <br></br></p>--->
+    <span id="position"></span>
+    <span id="height_feet"></span> 
+    <!--<p>Height (inches): <span id="height_inches"></span> <br></br></p>-->
+    <span id="weight_pounds"></span> 
+    <span id="full_name"></span> 
 </div>
     <div class="container">
         <div class="stats" id="gp"> <h4>GP</h4><h3></h3></div>
+
+        <div class="stats" id="season"><h4>season</h4><h3></h3></div>
+
+        <div class="stats" id="min"><h4>min</h4><h3></h3></div>
+
+        <div class="stats" id="reb"><h4>reb</h4><h3></h3></div>
+
+        <div class="stats" id="ast"><h4>ast</h4><h3></h3></div>
+        <div class="stats" id="stl"><h4>stl</h4><h3></h3></div>
+        <div class="stats" id="blk"><h4>blk</h4><h3></h3></div>
+        <div class="stats" id="turnover"><h4>turnover</h4><h3></h3></div>
+        <div class="stats" id="pf"><h4>pf</h4><h3></h3></div>
+        <div class="stats" id="pts"><h4>pts</h4><h3></h3></div>
+        <div class="stats" id="fg_pct"><h4>fg_pct</h4><h3></h3></div>
+        <div class="stats" id="fg3_pct"><h4>fg3_pct</h4><h3></h3></div>
+        <div class="stats" id="ft_pct"><h4>ft_pct</h4><h3></h3></div>
+
+    </div>
+
+    <script src="nba.js"></script>
+</body>
+
+</html>
+</DOCTYPE html>
+
+<!--   <div class="stats" id="gp"> <h4>GP</h4><h3></h3></div>
         <div class="stats" id="player_id"><h4>player_id</h4><h3></h3></div>
 
         <div class="stats" id="season"><h4>season</h4><h3></h3></div>
@@ -52,11 +79,4 @@
         <div class="stats" id="fg_pct"><h4>fg_pct</h4><h3></h3></div>
         <div class="stats" id="fg3_pct"><h4>fg3_pct</h4><h3></h3></div>
         <div class="stats" id="ft_pct"><h4>ft_pct</h4><h3></h3></div>
-
-    </div>
-
-    <script src="nba.js"></script>
-</body>
-
-</html>
-</DOCTYPE html>
+-->

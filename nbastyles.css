@@ -1,0 +1,81 @@
+body {
+    background-color:#212120;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    /* height: 100vh; */
+    /* margin: 18% auto; */
+    align-items: center;
+    /* align-self: center; */
+    min-height: 90vh;
+    align-content: center;
+}
+
+.search-b {
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+    /* padding: 0px;*/
+}
+
+button {
+    padding:10px;
+}
+
+.textbox {
+    width: 75%;
+    height: 2rem;
+    margin: 0 auto;
+}
+
+
+.player-stats {
+    /*display: flex;
+     width: 100%; */
+    flex-wrap: wrap;
+    /* align-items: center; */
+    /* flex-direction: column; */
+
+}
+
+.player-stats h1 {
+    width:100%;
+    color:white;
+}
+
+.player-stats span {
+    width:150px;
+    color:white;
+}
+
+.player-stats #full_name {
+    width:200px;
+}
+.container {
+    display:flex;
+    width:100%;
+    /*border: 1px solid grey;*/
+    margin-top:40px;
+    text-align: center;
+    justify-content: center;
+}
+
+.container .stats {
+    display:Flex;
+    flex-direction: column;
+    width:100px;
+    padding: 0px 5px;
+    justify-content: center;
+    border: 1px solid black;
+    text-align:center
+}
+
+.container .stats h4 {
+    color:gray;
+    text-transform:uppercase
+}
+
+.container .stats h3 {
+    color:white;
+}
