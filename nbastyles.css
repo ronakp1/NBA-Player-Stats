@@ -30,6 +30,7 @@ button {
     border: solid 1px gray;
     transition-duration:0.4s;
     border-radius:1rem;
+    font-size:20px;
 }
 
 button:hover {
