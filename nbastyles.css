@@ -81,10 +81,14 @@ button {
     color:gray;
     text-transform:uppercase;
     border-bottom: 1px solid grey;
+    margin-bottom:30px;
 }
 
 .container .stats h3 {
     color:white;
+    font-size: 30px;
+    margin: 0px;
+    padding-bottom: 30px;
 }
 
 
