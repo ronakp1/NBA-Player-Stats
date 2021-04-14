@@ -15,8 +15,8 @@ async function getSeasonAverages(player_id) {
         const response = await fetch(seasonsURL)
         const { data } = await response.json();
         //const docSelec = document.querySelector;
-
-       // document.querySelector('gp > h3').innerHTML = data[0].games_played;
+        console.log(data);
+        document.querySelector('#gp > h3').innerHTML = data[0].games_played;
         document.querySelector('#season > h3').innerHTML = data[0].season;
         document.querySelector('#min > h3').innerHTML = data[0].min;
         document.querySelector('#reb > h3').innerHTML = data[0].reb;
@@ -67,7 +67,6 @@ const debounce = (func, delay = 1000) => {
 async function getListOfPlayers() {
     try {
         const playerName = names.value;
-        //response.preventDefault();
         const response = await fetch(`https://www.balldontlie.io/api/v1/players?per_page=100&search=${playerName}`);
         const data = await response.json();
         console.log(data.data);
@@ -77,12 +76,11 @@ async function getListOfPlayers() {
             const dropDown = document.createElement("a");
             dropDown.classList.add('dropdown');
 
-            dropDown.innerHTML = `${player.first_name} ${player.last_name} - ${player.team.full_name}`;
+            dropDown.innerHTML = `${player.first_name} ${player.last_name} - ${player.team.abbreviation}`;
 
             dropDown.addEventListener('click', () => {
                 bar.classList.add('hide');
                 names.value = `${player.first_name} ${player.last_name}`;
-
             })
             bar.appendChild(dropDown);
 
