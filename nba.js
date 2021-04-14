@@ -103,4 +103,4 @@ async function getListOfPlayers() {
     }
 }
 
-names.addEventListener('input', debounce(getListOfPlayers, 500));
+names.addEventListener('input', debounce(getListOfPlayers, 100));
