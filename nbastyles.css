@@ -42,6 +42,12 @@ button:hover {
     width: 75%;
     height: 2rem;
     margin: 0 auto;
+    background-color: #212120;
+    border: solid 1px grey;
+    /* border-radius: 1rem; */
+    padding: 10px;
+    font-size: 18px;
+    color: white;
 }
 
 
