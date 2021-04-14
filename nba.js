@@ -74,6 +74,7 @@ async function getListOfPlayers() {
         for (let player of data.data) {
             console.log(`${player.first_name} ${player.last_name} ${player.team.full_name}`);
             const dropDown = document.createElement("a");
+            if (player.id <= 493 || player.id >= 666604) {
             dropDown.classList.add('dropdown');
 
             dropDown.innerHTML = `${player.first_name} ${player.last_name} - ${player.team.abbreviation}`;
@@ -83,7 +84,7 @@ async function getListOfPlayers() {
                 names.value = `${player.first_name} ${player.last_name}`;
             })
             bar.appendChild(dropDown);
-
+        }
         }
     } catch (error) {
         console.log(error)
