@@ -2,6 +2,7 @@ const names = document.querySelector('[data-search]');
 const submit = document.querySelector('[data-submit]');
 const stats = document.getElementById('container1');
 const seasonsName = document.getElementById('nameof');
+submit.disabled = true;
 
 submit.addEventListener('click', button => {
     const nameSearch = names.value;
@@ -68,6 +69,7 @@ const debounce = (func, delay = 1000) => {
     };
 };
 
+
 async function getListOfPlayers() {
     try {
         const playerName = names.value;
@@ -84,12 +86,13 @@ async function getListOfPlayers() {
                    dropDown.classList.add('dropdown');
 
                     dropDown.innerHTML = `${player.first_name} ${player.last_name} - ${player.team.abbreviation}`;
-
+                    submit.disabled = true;
                     dropDown.addEventListener('click', () => {
                         bar.classList.add('hide');
                         const test2 = document.querySelectorAll('a').forEach(e =>
                             e.remove());
                         names.value = `${player.first_name} ${player.last_name}`;
+                        submit.disabled = false;
                         
                     })
                     bar.appendChild(dropDown);
