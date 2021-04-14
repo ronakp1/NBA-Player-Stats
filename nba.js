@@ -1,9 +1,14 @@
 const names = document.querySelector('[data-search]');
 const submit = document.querySelector('[data-submit]');
+const stats = document.getElementById('container1');
+const seasonsName = document.getElementById('nameof');
 
 submit.addEventListener('click', button => {
     const nameSearch = names.value;
     const newurl = `https://www.balldontlie.io/api/v1/players?search=${nameSearch};`
+    //stats.style.display = block;
+    stats.classList.remove('hide');
+    seasonsName.classList.remove('hide');
     getPlayerInfo(newurl);
     const bar = document.getElementById('results');
     bar.classList.add('hide');
