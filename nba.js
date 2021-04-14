@@ -108,3 +108,7 @@ async function getListOfPlayers() {
 }
 
 names.addEventListener('input', debounce(getListOfPlayers, 500));
+document.addEventListener('click', event => {
+    const test2 = document.querySelectorAll('a').forEach(e =>
+        e.remove());
+})
