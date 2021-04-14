@@ -71,12 +71,16 @@ button {
     padding: 0px 5px;
     justify-content: center;
     border: 1px solid black;
-    text-align:center
+    background-color: hsla(12, 12%, 17%, 0.3);
+    border-radius:1rem;
+    text-align:center;
+    margin:2px;
 }
 
 .container .stats h4 {
     color:gray;
-    text-transform:uppercase
+    text-transform:uppercase;
+    border-bottom: 1px solid grey;
 }
 
 .container .stats h3 {
