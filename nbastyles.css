@@ -21,6 +21,7 @@ body {
 
 button {
     padding:10px;
+    margin-top:25px;
 }
 
 .textbox {
@@ -36,7 +37,8 @@ button {
     flex-wrap: wrap;
     /* align-items: center; */
     /* flex-direction: column; */
-
+    text-align:center;
+    width:100%;
 }
 
 .player-stats h1 {
@@ -78,4 +80,29 @@ button {
 
 .container .stats h3 {
     color:white;
+}
+
+.dropdown {
+    /**position: relative;
+    display:inline-block;
+      max-height:300px;
+      overflow:auto;
+*/
+max-height: 300px;
+/**overflow: auto;*/
+position: absolute;
+left: 120px;
+}
+
+.dropdown a {
+    color: black;
+    background-color: #f6f6f6;
+    display: block;
+    border: 1px solid #ddd;
+
+    width: 300px;
+}
+
+.hide {
+    display:none;
 }
