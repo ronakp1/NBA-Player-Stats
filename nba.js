@@ -42,7 +42,7 @@ async function getPlayerInfo(newurl) {
         document.getElementById('name').textContent = `${data.data[0].first_name} ${data.data[0].last_name} |`;
         document.getElementById('position').textContent = `Position: ${data.data[0].position} |`;
         document.getElementById('height_feet').textContent = `Height: ${data.data[0].height_feet} ' ${data.data[0].height_inches} |`;
-        document.getElementById('weight_pounds').textContent = `Weight: ${data.data[0].weight_pounds}lbs |`;
+        document.getElementById('weight_pounds').textContent = `Weight: ${data.data[0].weight_pounds} lbs |`;
         document.getElementById('full_name').textContent = `Team: ${data.data[0].team.full_name}`;
         const player_id = data.data[0].id;
         getSeasonAverages(player_id)
