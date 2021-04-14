@@ -20,7 +20,6 @@ async function getSeasonAverages(player_id) {
         const response = await fetch(seasonsURL)
         const { data } = await response.json();
         //const docSelec = document.querySelector;
-        console.log(data);
         document.querySelector('#gp > h3').innerHTML = data[0].games_played;
         document.querySelector('#season > h3').innerHTML = data[0].season;
         document.querySelector('#min > h3').innerHTML = data[0].min;
@@ -74,22 +73,30 @@ async function getListOfPlayers() {
         const playerName = names.value;
         const response = await fetch(`https://www.balldontlie.io/api/v1/players?per_page=100&search=${playerName}`);
         const data = await response.json();
-        console.log(data.data);
         const bar = document.getElementById('results');
-        for (let player of data.data) {
-            console.log(`${player.first_name} ${player.last_name} ${player.team.full_name}`);
-            const dropDown = document.createElement("a");
-            if (player.id <= 493 || player.id >= 666604) {
-            dropDown.classList.add('dropdown');
+        if (playerName.length > 2) {
+            for (let player of data.data) {
+                const dropDown = document.createElement("a");
+                if (player.id <= 493 || player.id >= 666604) {
+                    bar.classList.remove('hide');
+                   dropDown.classList.add('dropdown');
 
-            dropDown.innerHTML = `${player.first_name} ${player.last_name} - ${player.team.abbreviation}`;
+                    dropDown.innerHTML = `${player.first_name} ${player.last_name} - ${player.team.abbreviation}`;
 
-            dropDown.addEventListener('click', () => {
-                bar.classList.add('hide');
-                names.value = `${player.first_name} ${player.last_name}`;
-            })
-            bar.appendChild(dropDown);
+                    dropDown.addEventListener('click', () => {
+                        bar.classList.add('hide');
+                        names.value = `${player.first_name} ${player.last_name}`;
+                        
+                    })
+                    bar.appendChild(dropDown);
+                }
+            }
         }
+        if (playerName.length == 0 && playerName.length < 3) {
+            //console.log("test");
+            const test2 = document.querySelectorAll('a').forEach(e =>
+                e.remove());
+
         }
     } catch (error) {
         console.log(error)

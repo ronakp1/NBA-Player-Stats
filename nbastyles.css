@@ -119,7 +119,7 @@ button:hover {
     /* z-index: 20; */
 
 }
-.dropdown {
+.dropdown-container {
     /**position: relative;
     display:inline-block;
       max-height:300px;
@@ -132,7 +132,7 @@ left: 12%;
 width:230px;
 }
 
-.dropdown a {
+.dropdown {
     color: white;
    /* background-color: #f6f6f6;*/
     /**display: block;*/
@@ -141,10 +141,10 @@ width:230px;
     display:block;
     width:205px;
     padding:10px 4px;
-    background-color: hsla(45, 51%, 87%, 0.3);
+    background-color: hsla(33, 10%, 42%, 0.3);
 }
 
-.dropdown a:hover {
+.dropdown-container a:hover {
     background-color:#ddd;
     font-weight: bold;
     cursor:pointer;
