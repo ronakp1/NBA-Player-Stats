@@ -74,7 +74,9 @@ async function getListOfPlayers() {
         const response = await fetch(`https://www.balldontlie.io/api/v1/players?per_page=100&search=${playerName}`);
         const data = await response.json();
         const bar = document.getElementById('results');
-        if (playerName.length > 2) {
+        const test2 = document.querySelectorAll('a').forEach(e =>
+            e.remove());
+        if (playerName.length > 2 && playerName.length != 0) {
             for (let player of data.data) {
                 const dropDown = document.createElement("a");
                 if (player.id <= 493 || player.id >= 666604) {
@@ -85,6 +87,8 @@ async function getListOfPlayers() {
 
                     dropDown.addEventListener('click', () => {
                         bar.classList.add('hide');
+                        const test2 = document.querySelectorAll('a').forEach(e =>
+                            e.remove());
                         names.value = `${player.first_name} ${player.last_name}`;
                         
                     })
@@ -103,4 +107,4 @@ async function getListOfPlayers() {
     }
 }
 
-names.addEventListener('input', debounce(getListOfPlayers, 100));
+names.addEventListener('input', debounce(getListOfPlayers, 500));
