@@ -94,7 +94,7 @@ button {
 
 .menu {
     position: absolute;
-    left: 250px;
+    left: 228px;
     /* top: 100%; */
     /* z-index: 20; */
 
@@ -113,18 +113,21 @@ width:230px;
 }
 
 .dropdown a {
-    color: black;
-    background-color: #f6f6f6;
+    color: white;
+   /* background-color: #f6f6f6;*/
     /**display: block;*/
-    border: 1px solid #ddd;
+   /* border: 1px solid #ddd;
     /*width: 300px;*/
     display:inline-block;
     width:205px;
     padding:10px 4px;
+    background-color: hsla(45, 51%, 87%, 0.3);
 }
 
 .dropdown a:hover {
     background-color:#ddd;
+    font-weight: bold;
+    cursor:pointer;
 }
 .hide {
    display:none;
