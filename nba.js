@@ -15,7 +15,8 @@ submit.addEventListener('click', button => {
     bar.classList.add('hide');
 })
 
-async function getSeasonAverages(player_id) {
+const getSeasonAverages = async player_id => {
+//async function getSeasonAverages(player_id) {
     try {
         const seasonsURL = `https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${player_id}`;
         const response = await fetch(seasonsURL)
@@ -39,7 +40,7 @@ async function getSeasonAverages(player_id) {
     }
 }
 
-async function getPlayerInfo(newurl) {
+const getPlayerInfo = async newurl => {
     try {
         const response = await fetch(newurl);
         const data = await response.json();
@@ -68,7 +69,6 @@ const debounce = (func, delay = 1000) => {
         }, delay);
     };
 };
-
 
 async function getListOfPlayers() {
     try {
