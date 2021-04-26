@@ -1,13 +1,14 @@
 const names = document.querySelector('[data-search]');
 const submit = document.querySelector('[data-submit]');
-const stats = document.getElementById('container1');
 const seasonsName = document.getElementById('nameof');
+const stats = document.getElementById('container1');
+
 submit.disabled = true;
 
 submit.addEventListener('click', button => {
-    const nameSearch = names.value;
+    const nameSearch = names.value; //stores the searched name
     const newurl = `https://www.balldontlie.io/api/v1/players?search=${nameSearch};`
-    stats.classList.remove('hide');
+    stats.classList.remove('hide'); 
     seasonsName.classList.remove('hide');
     getPlayerInfo(newurl);
     const bar = document.getElementById('results');
@@ -20,21 +21,27 @@ const getSeasonAverages = async player_id => {
         const response = await fetch(seasonsURL)
         const { data } = await response.json();
 
-        const [{ games_played, season, min, reb, ast, stl, blk, turnover, pf, pts, fg_pct, fg3_pct, ft_pct }] = data;
+        const currentArray = { games_played, season, min, reb, ast, stl, blk, turnover, pf, pts, fg_pct, fg3_pct, ft_pct } = data;
 
-        document.querySelector('#gp > h3').innerHTML = games_played;
-        document.querySelector('#season > h3').innerHTML = season;
-        document.querySelector('#min > h3').innerHTML = min;
-        document.querySelector('#reb > h3').innerHTML = reb;
-        document.querySelector('#ast > h3').innerHTML = ast;
-        document.querySelector('#stl > h3').innerHTML = stl;
-        document.querySelector('#blk > h3').innerHTML = blk;
-        document.querySelector('#turnover > h3').innerHTML = turnover;
-        document.querySelector('#pf > h3').innerHTML = pf;
-        document.querySelector('#pts > h3').innerHTML = pts;
-        document.querySelector('#fg_pct > h3').innerHTML = fg_pct;
-        document.querySelector('#fg3_pct > h3').innerHTML = fg3_pct;
-        document.querySelector('#ft_pct > h3').innerHTML = ft_pct;
+        const keysToIterate = ["games_played", "season", "min", "reb", "ast", "stl", "blk", "turnover", "pf", "pts", "fg_pct", "fg3_pct", "ft_pct"];
+
+        const values = Object.keys(currentArray[0]).filter(a => keysToIterate.includes(a)).map(a => currentArray[0][a]);
+
+        let i = 0;
+        keysToIterate.forEach(key => {
+            stats1 = document.createElement('div');
+            stats1.classList.add('stats');
+            stats.appendChild(stats1);
+
+            eh4 = document.createElement('h4');
+            eh4.innerHTML = key;
+            eh3 = document.createElement('h3');
+            eh3.innerHTML = values[i];
+            i++;
+
+            stats1.appendChild(eh4);
+            stats1.appendChild(eh3);
+        })
 
     } catch (error) {
         console.log(error)
@@ -48,11 +55,17 @@ const getPlayerInfo = async newurl => {
 
         const [{ first_name, id, last_name, position, height_feet, height_inches, weight_pounds, team: { full_name } }] = data;
 
-        document.getElementById('name').textContent = `${first_name} ${last_name} |`;
-        document.getElementById('position').textContent = `Position: ${position} |`;
-        document.getElementById('height_feet').textContent = `Height: ${height_feet} ' ${height_inches} |`;
-        document.getElementById('weight_pounds').textContent = `Weight: ${weight_pounds} lbs |`;
-        document.getElementById('full_name').textContent = `Team: ${full_name}`;
+        const pName = document.getElementById('name');
+        const pPosition = document.getElementById('position');
+        const height = document.getElementById('height_feet');
+        const weight = document.getElementById('weight_pounds');
+        const pFull_name = document.getElementById('full_name');
+
+        pName.textContent = `${first_name} ${last_name} |`;
+        pPosition.textContent = `Position: ${position} |`;
+        height.textContent = `Height: ${height_feet} ' ${height_inches} |`;
+        weight.textContent = `Weight: ${weight_pounds} lbs |`;
+        pFull_name.textContent = `Team: ${full_name}`;
 
         getSeasonAverages(id)
     } catch (error) {
